@@ -1,10 +1,7 @@
-
-import Home from "./components/home/home";
+import AppRouter from "./router/router";
 
 function App() {
-  return (
-    <Home />
-  );
+  return <AppRouter />;
 }
 
 export default App;
