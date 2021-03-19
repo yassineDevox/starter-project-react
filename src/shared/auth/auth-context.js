@@ -13,6 +13,12 @@ export class AuthProvider extends Component {
     };
   }
 
+  componentDidMount(){
+    auth.onAuthStateChanged((user)=>{
+      this.setState({currentUser:user})
+    })
+  }
+
 
   register = (email,password) => {
     return auth.createUserWithEmailAndPassword(email,password);
