@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Register from "../../components/register";
 import AuthContext from "../../shared/auth/auth-context";
+import { auth } from "../../utils/firebase";
 
 export default class RegisterPage extends Component {
   constructor(props) {
@@ -49,21 +50,27 @@ export default class RegisterPage extends Component {
      
       //----utiliser register du auth-context
       this.context.register(this.state.email,this.state.password).then((response)=>{
-        // console.log(response)
+        
+        //if user is registred
+        auth.onAuthStateChanged((user)=>{
+
+          user.updateProfile({
+            displayName:this.state.firstname+" "+this.state.lastname
+          })
+          
+          console.log(user)
+        })
 
 
       }).catch((error)=>{
-        
+
         alert(error.message)
-        
+
       })
 
     }
 
-    
-      //utiliser register du auth-context
-      // console.log(this.context)
-      this.context.register()
+  
   };
 
   //--- handle change input
@@ -74,6 +81,7 @@ export default class RegisterPage extends Component {
     //--changer state
     this.setState({ [name]: value });
   };
+  
 }
 
 //liaison avec authProvider

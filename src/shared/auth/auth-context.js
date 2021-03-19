@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { auth } from "../../utils/firebase";
 
 //create authContext from React
-
 const AuthContext = React.createContext();
 
 export class AuthProvider extends Component {
@@ -13,17 +12,19 @@ export class AuthProvider extends Component {
       currentUser: {},
     };
   }
+
+
   register = (email,password) => {
     return auth.createUserWithEmailAndPassword(email,password);
   };
 
   //shared features
-  login = () => {
-    alert("login ");
+  login = (email,password) => {
+    return auth.signInWithEmailAndPassword(email,password)
   };
 
   logout = () => {
-    alert("logout");
+    return auth.signOut();
   };
 
   render() {

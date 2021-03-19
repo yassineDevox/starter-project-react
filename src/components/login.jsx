@@ -5,7 +5,7 @@ import "./../assets/main.css";
 import  bgImage from "./../assets/bg-01.jpg"
 
 
-export default function Login() {
+export default function Login(props) {
     return (
         <div>
           <div className="limiter">
@@ -14,7 +14,7 @@ export default function Login() {
               style={{ backgroundImage: `url(${bgImage})` }}
             >
               <div className="wrap-login100">
-                <form className="login100-form validate-form">
+                <form onSubmit={props.handleSubmit} className="login100-form validate-form">
                   <span className="login100-form-logo">
                     <i className="fas fa-key" />
                   </span>
@@ -26,11 +26,12 @@ export default function Login() {
                     data-validate="Enter username"
                   >
                     
-                    <input
+                    <input 
+                      onChange={props.handleChange}
                       className="input100"
-                      type="text"
-                      name="username"
-                      placeholder="Username"
+                      type="email"
+                      name="email"
+                      placeholder="Email Address"
                     />
                     <span className="focus-input100" data-placeholder="😃" ></span>
                   </div>
@@ -38,17 +39,18 @@ export default function Login() {
                     className="wrap-input100 validate-input"
                     data-validate="Enter password"
                   >
-                    <input
+                    <input 
+                    onChange={props.handleChange}
                       className="input100"
                       type="password"
-                      name="pass"
+                      name="password"
                       placeholder="Password"
                     />
                     <span className="focus-input100" data-placeholder="🤨" />
                   </div>
                 
                   <div className="container-login100-form-btn">
-                    <button className="login100-form-btn">Login</button>
+                    <button type="submit" className="login100-form-btn">Login</button>
                   </div>
                   <div className="text-center p-t-90">
                     <a
