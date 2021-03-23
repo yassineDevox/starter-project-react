@@ -1,18 +1,17 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import DashboardPage from "../pages/dashboard-page";
-import Error404Page from "../pages/error404-page";
-import LmsPage from "../pages/lms-page";
-import RegisterPage from "../pages/register/register-page";
-import { AuthProvider } from "../shared/auth/auth-context";
-import LoginPage from "./../pages/login/login-page";
+import LoginPage from "../pages/admin/auth/login/login-page";
+import RegisterPage from "../pages/admin/auth/register/register-page";
+import DashboardPage from "../pages/admin/dash/dashboard-page";
+import Error404Page from "../pages/errors/error404-page";
+import WebsitePage from "../pages/website/website";
 
 export default function AppRouter() {
   return (
     <Router>
       <AuthProvider>
         <Switch>
-          <Route exact path="/" component={LmsPage} />
+          <Route exact path="/" component={WebsitePage} />
           <Route path="/register" component={RegisterPage} />
           <Route path="/admin" component={LoginPage} />
           <Route path="/dash" component={DashboardPage} />

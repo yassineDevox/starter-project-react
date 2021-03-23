@@ -20,11 +20,16 @@ export default function AdminTheme(props) {
                   src="https://image.freepik.com/free-vector/online-shop-store-e-commerce-sale-msacot-cute-logo_8169-157.jpg"
                   alt="merkery_logo"
                   className="hidden-xs hidden-sm"
+                  height="150px"
+                  style={{width:150}}
+                  
                 />
                 <img
                   src="https://image.freepik.com/free-vector/online-shop-store-e-commerce-sale-msacot-cute-logo_8169-157.jpg"
                   alt="merkery_logo"
                   className="visible-xs visible-sm circle-logo"
+                  height="150px"
+                  
                 />
               </a>
             </div>
@@ -99,9 +104,7 @@ export default function AdminTheme(props) {
                       </button>
                     </div>
                   </nav>
-                  <div className="search hidden-xs hidden-sm">
-                    <input type="text" placeholder="Search" id="search" />
-                  </div>
+                 <input style={{marginTop:10}} className="form-control" placeholder="Search For Something ..." type="text" />
                 </div>
                 <div className="col-md-5">
                   <div className="header-rightside">

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AdminTheme from '../shared/theme-admin-shared'
+import AdminTheme from '../../../shared/theme-admin-shared'
 
 export default class DashboardPage extends Component {
     render() {

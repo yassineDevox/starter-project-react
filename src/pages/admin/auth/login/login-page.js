@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Login from "../../components/login";
-import AuthContext from "../../shared/auth/auth-context";
+import Login from "../../../../components/login";
+import AuthContext from "../../../../shared/auth/auth-context";
 
 export default class LoginPage extends Component {
 
