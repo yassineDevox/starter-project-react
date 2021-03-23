@@ -1,6 +1,11 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 import "./../assets/style.css";
+import AuthContext from "./auth/auth-context";
 
 export default function AdminTheme(props) {
+  
+  const  { logout } = useContext(AuthContext)
   return (
     <div class="home">
       <div className="container-fluid display-table">
@@ -28,7 +33,7 @@ export default function AdminTheme(props) {
                 <li className="active">
                   <a href="#">
                     <i className="fa fa-home" aria-hidden="true" />
-                    <span className="hidden-xs hidden-sm">Home</span>
+                    <span className="hidden-xs hidden-sm">Dashboard</span>
                   </a>
                 </li>
                 <li>
@@ -121,14 +126,16 @@ export default function AdminTheme(props) {
                                 me@jskrishna.com
                               </p>
                               <div className="divider"></div>
-                              <a href="#" className="btn btn-danger">
-                                <i
-                                  style={{ color: "white" }}
-                                  className="fa fa-sign-out"
-                                  aria-hidden="true"
-                                />{" "}
-                                logout
-                              </a>
+                              <Link to="/admin" onClick={ ()=> logout() }>
+                                <a href="#" className="btn btn-danger">
+                                  <i
+                                    style={{ color: "white" }}
+                                    className="fa fa-sign-out"
+                                    aria-hidden="true"
+                                  />{" "}
+                                  logout
+                                </a>
+                              </Link>
                             </div>
                           </li>
                         </ul>

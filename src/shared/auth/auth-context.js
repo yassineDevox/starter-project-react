@@ -30,6 +30,7 @@ export class AuthProvider extends Component {
   };
 
   logout = () => {
+    alert('logout')
     return auth.signOut();
   };
 
