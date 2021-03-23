@@ -1,18 +1,14 @@
 import React, { Component } from 'react'
-import AuthContext from '../shared/auth/auth-context'
+import AdminTheme from '../shared/theme-admin-shared'
 
 export default class DashboardPage extends Component {
     render() {
         return (
-            <div className="text-center bg-primary text-white">
-                   Hi  {this.context.currentUser.displayName} 😄 !!
-                <button onClick={this.context.logout} className="btn btn-danger">Deconecter</button>
-
-            </div>
-            
+            <AdminTheme>
+                <h1>Dashboard Page</h1>
+            </AdminTheme>
         )
     }
 }
 
-DashboardPage.contextType = AuthContext;
 
