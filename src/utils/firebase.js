@@ -3,15 +3,13 @@ import 'firebase/auth';
 
 // Your web app's Firebase configuration
  var firebaseConfig = {
-
-    apiKey: "AIzaSyAnwZ7DPu9eDCmQvw_h2-1XrhbTLco_gho",
-    authDomain: "lms-project-966cf.firebaseapp.com",
-    databaseURL: "https://lms-project-966cf-default-rtdb.firebaseio.com",
-    projectId: "lms-project-966cf",
-    storageBucket: "lms-project-966cf.appspot.com",
-    messagingSenderId: "874849901753",
-    appId: "1:874849901753:web:243346e755c02343090f68"
-    
+   apiKey: "AIzaSyCQjKe3lYR03ZtWKIFzqtKhcGYzIhUfOnk",
+   authDomain: "lms-project-492bf.firebaseapp.com",
+   databaseURL: "https://lms-project-492bf-default-rtdb.firebaseio.com",
+   projectId: "lms-project-492bf",
+   storageBucket: "lms-project-492bf.appspot.com",
+   messagingSenderId: "754517988569",
+   appId: "1:754517988569:web:d1c59640678e6e70f15ac8"
  };
 
 

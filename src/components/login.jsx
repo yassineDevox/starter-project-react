@@ -1,71 +1,57 @@
-import React from 'react'
-
+import React from "react";
 import { Link } from "react-router-dom";
 import "./../assets/main.css";
-import  bgImage from "./../assets/bg-01.jpg"
 
 
 export default function Login(props) {
-    return (
-        <div>
-          <div className="limiter">
-            <div
-              className="container-login100"
-              style={{ backgroundImage: `url(${bgImage})` }}
-            >
-              <div className="wrap-login100">
-                <form onSubmit={props.handleSubmit} className="login100-form validate-form">
-                  <span className="login100-form-logo">
-                    <i className="fas fa-key" />
-                  </span>
-                  <span className="login100-form-title p-b-34 p-t-27">
-                    Log in
-                  </span>
-                  <div
-                    className="wrap-input100 validate-input"
-                    data-validate="Enter username"
-                  >
-                    
-                    <input 
-                      onChange={props.handleChange}
-                      className="input100"
-                      type="email"
-                      name="email"
-                      placeholder="Email Address"
-                    />
-                    <span className="focus-input100" data-placeholder="😃" ></span>
-                  </div>
-                  <div
-                    className="wrap-input100 validate-input"
-                    data-validate="Enter password"
-                  >
-                    <input 
+ 
+  return (
+    <div className=" ">
+      <div className="row">
+        <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div className=" card-signin  my-5">
+            <div className="card-body">
+              <h5 className="card-title text-center fs-1 text-white">SignIn</h5>
+              <form onSubmit={props.handleSubmit} className="form-signin">
+                <div className="form-label-group">
+                  <input
                     onChange={props.handleChange}
-                      className="input100"
-                      type="password"
-                      name="password"
-                      placeholder="Password"
-                    />
-                    <span className="focus-input100" data-placeholder="🤨" />
-                  </div>
-                
-                  <div className="container-login100-form-btn">
-                    <button type="submit" className="login100-form-btn">Login</button>
-                  </div>
-                  <div className="text-center p-t-90">
-                    <a
-                      className="txt1"
-                      href="https://colorlib.com/etc/lf/Login_v3/index.html#"
-                    >
-                      <br/>
-                      <Link to="/register" className="text-white">Create your account </Link>
-                    </a>
-                  </div>
-                </form>
-              </div>
+                    type="email"
+                    id="inputEmail"
+                    className="form-control"
+                    placeholder="Email address"
+                    name="email"
+                  />
+                </div>
+                <div className="form-label-group">
+                  <input
+                    onChange={props.handleChange}
+                    type="password"
+                    id="inputPassword"
+                    className="form-control"
+                    placeholder="Password"
+                    name="password"
+                  />
+                </div>
+
+              
+                  <button
+                    className="btn btn-lg btn-warning  btn-block text-uppercase  w-100 "
+                    type="submit"
+                  >
+                    Sign in
+                  </button>
+              
+
+                <hr className="my-4" />
+                <Link to="/register" className=" p-2">
+                  you don't have an account ?
+                </Link>
+              </form>
             </div>
           </div>
-          <div id="dropDownSelect1" ></div>
+        </div>
       </div>
-    )
+    </div>
+  );
 }

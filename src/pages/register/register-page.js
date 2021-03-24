@@ -37,14 +37,14 @@ export default class RegisterPage extends Component {
     // validation du formulaire
 
     if (
-      this.state.firstname == "" ||
-      this.state.lastname == "" ||
-      this.state.email == "" ||
-      this.state.password == "" ||
-      this.state.confirmedPassword == ""
+      this.state.firstname === "" ||
+      this.state.lastname === "" ||
+      this.state.email === "" ||
+      this.state.password === "" ||
+      this.state.confirmedPassword === ""
     ) {
       alert("Veuillez remplir toutes les champs du formulaire 😑😠");
-    } else if (this.state.confirmedPassword != this.state.password) {
+    } else if (this.state.confirmedPassword !== this.state.password) {
       alert("Veuillez Saisir le meme mot de passe hihi 🤣 !!");
     } else {
      

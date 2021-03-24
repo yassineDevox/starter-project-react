@@ -4,8 +4,8 @@ import AuthContext from "../../shared/auth/auth-context";
 
 export default class LoginPage extends Component {
 
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
       email:"",
       password:""
@@ -30,16 +30,17 @@ export default class LoginPage extends Component {
     // validation du formulaire
 
     if (
-      this.state.email == "" ||
-      this.state.password == ""
+      this.state.email === "" ||
+      this.state.password === ""
     ) {
+      
       alert("Veuillez remplir toutes les champs du formulaire 😑😠");
     }else {
-     
+    
       //----utiliser register du auth-context
       this.context.login(this.state.email,this.state.password).then((response)=>{
         console.log(response)
-
+   this.props.history.push("./shared")
       }).catch((error)=>{
         alert(error.message)
       })
@@ -52,11 +53,11 @@ export default class LoginPage extends Component {
    handleChangeInput = (event) => {
     let value = event.target.value;
     let name = event.target.name;
-    console.log(name, value);
+    
     //--changer state
     this.setState({ [name]: value });
+   
   };
-
 
 }
 
