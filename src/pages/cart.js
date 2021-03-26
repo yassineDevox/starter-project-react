@@ -12,18 +12,25 @@ export default class CartPage extends Component {
           {this.context.list_order_data.map((o) => {
             return (
               <li className="m-2">
-                {o.title} <input type="number" value={o.quantity} /> <button className="btn btn-danger">X</button>
+                {o.title} <input type="number" value={o.quantity} />{" "}
+                <button onClick={ ()=> this.removeItem(o.id)} className="btn btn-danger">X</button>
               </li>
             );
           })}
         </ul>
         <form>
-          <input type="text" placeholder="Entrer your phone number" /><br/>
-          <input type="text" placeholder="full name" /><br/>
+          <input type="text" placeholder="Entrer your phone number" />
+          <br />
+          <input type="text" placeholder="full name" />
+          <br />
           <button className="btn btn-danger"> Order Now 😝 </button>
         </form>
       </Website>
     );
+  }
+
+  removeItem = (removedId)=>{
+      this.context.remove(removedId);
   }
 }
 

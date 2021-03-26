@@ -36,7 +36,18 @@ export class ShoppingCartProvider extends Component {
     console.log(SelecteProduct);
   };
 
-  remove = () => {};
+  remove = (removedId) => {
+
+    let choice = window.confirm("Are you sure 😅?")
+    if(choice){
+        let newList = this.state.list_order_data.filter(o=>o.id!=removedId)
+        this.setState({list_order_data:newList})
+    }
+  };
+
+
+
+
   updateQuantity = () => {};
 
   render() {
