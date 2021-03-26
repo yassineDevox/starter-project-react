@@ -11,9 +11,20 @@ export default class CartPage extends Component {
         <ul>
           {this.context.list_order_data.map((o) => {
             return (
-              <li className="m-2">
-                {o.title} <input type="number" value={o.quantity} />{" "}
-                <button onClick={ ()=> this.removeItem(o.id)} className="btn btn-danger">X</button>
+              <li key={o.id} className="m-2">
+                {o.title}
+                <input 
+                        type="number" 
+                        value={o.quantity}
+                        onChange={(e) => this.updateQuantity(e,o.id)} 
+                        min="1"
+                />
+                <button
+                  onClick={() => this.removeItem(o.id)}
+                  className="btn btn-danger"
+                >
+                  X
+                </button>
               </li>
             );
           })}
@@ -29,9 +40,16 @@ export default class CartPage extends Component {
     );
   }
 
-  removeItem = (removedId)=>{
-      this.context.remove(removedId);
+  updateQuantity = (e,id)=>{
+
+
+    this.context.updateQuantity(e.target.value,id)
+
   }
+
+  removeItem = (removedId) => {
+    this.context.remove(removedId);
+  };
 }
 
 CartPage.contextType = ShoppingCartContext;

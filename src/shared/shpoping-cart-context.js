@@ -46,9 +46,19 @@ export class ShoppingCartProvider extends Component {
   };
 
 
+  updateQuantity = (newQuantity,idOrder) => {
 
+    let newList = this.state.list_order_data;
 
-  updateQuantity = () => {};
+    newList.forEach((order) => {
+      if (order.id == idOrder) {
+        order.quantity = newQuantity;
+      }
+    });
+
+    this.setState({ list_order_data: newList });
+
+  };
 
   render() {
     return (
