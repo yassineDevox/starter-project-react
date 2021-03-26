@@ -4,7 +4,6 @@ import React, { Component } from "react";
 const ShoppingCartContext = React.createContext();
 
 export class ShoppingCartProvider extends Component {
-    
   // data shared
   constructor(props) {
     super(props);
@@ -13,19 +12,41 @@ export class ShoppingCartProvider extends Component {
     };
   }
 
-  //-- features 
-  addToCart = ()=>{ alert("add to cart 😀 !!")}
-  remove = ()=>{}
-  updateQuantity = ()=>{}
+  //-- features
+  addToCart = (SelecteProduct) => {
+    let p = this.state.list_order_data.find((o) => o.id == SelecteProduct.id);
+    if (p == undefined) {
+      //ajouter a la liste
+      let newList = this.state.list_order_data;
+      newList.push({ ...SelecteProduct, quantity: 1 });
+
+      this.setState({ list_order_data: newList });
+    } else {
+      let newList = this.state.list_order_data;
+
+      newList.forEach((order) => {
+        if (order.id == p.id) {
+          order.quantity++;
+        }
+      });
+
+      this.setState({ list_order_data: newList });
+    }
+
+    console.log(SelecteProduct);
+  };
+
+  remove = () => {};
+  updateQuantity = () => {};
 
   render() {
     return (
       <ShoppingCartContext.Provider
         value={{
           list_order_data: this.state.list_order_data,
-          addToCart:this.addToCart,
-          remove:this.remove,
-          updateQuantity:this.updateQuantity
+          addToCart: this.addToCart,
+          remove: this.remove,
+          updateQuantity: this.updateQuantity,
         }}
       >
         {this.props.children}
